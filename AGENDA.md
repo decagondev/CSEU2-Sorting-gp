@@ -14,3 +14,15 @@
 - Go over Linear and binary search [WE DO]
 -Show the Project Rep (Wrapup) [I DO]
 - will make some augmentation videos to cover extras (Insertion Sort)
+
+## Sorting Day 2
+- Talk a little more about recursion (review) [I DO]
+- Talk about recursive sorting and Quick Sort [I DO]
+- 5 min break
+- Implement Recursive Quicksort (partition and sort) [WE DO]
+- Implement in place quick sort [WE DO]
+- 5 min break
+- Implement Quick sort with internal stack [WE DO]
+- quick talk about timsort [I DO]
+- talk about the project (Wrap up) [I DO]
+- (aditional video will be made with another version of quick sort

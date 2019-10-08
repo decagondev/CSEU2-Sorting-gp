@@ -1,11 +1,21 @@
 from book import Book
+from time import time
+import random
+l = [random.randint(0, 1000) for i in range(0, 100)]
+
+input_sizes = [i * 100 for i in range(1, 50)]
+
+times = []
+
+
+
 
 def insertion_sort(books):
     # loop through len - 1 elements
     for i in range(1, len(books)):
         temp = books[i]
         j = i
-        while j > 0 and temp.genre < books[j - 1]. genre:
+        while j > 0 and temp < books[j - 1]:
             # shift left until correct genre is found
             books[j] = books[j - 1]
             j -= 1
@@ -21,6 +31,22 @@ b6 = Book("a", "a", "a")
 books = [b1, b2, b3, b5, b4, b6]
 print(books)
 
-sorted_books = insertion_sort(books)
-print("--------------------")
-print(sorted_books)
+for input_size in input_sizes:
+    print(f"Running: {input_size}")
+    l = [random.randint(0, 1000) for i in range(0, input_size)]
+    # Store start time
+    start_time = time()
+    # Run some code
+    sorted_books = insertion_sort(l)
+    # Store end time
+    end_time = time()
+    # print out end time - start time
+    times.append(end_time - start_time)
+
+print("LENGTHS")
+for elem in input_sizes:
+    print(elem)
+
+print("TIMES")
+for t in times:
+    print(t)

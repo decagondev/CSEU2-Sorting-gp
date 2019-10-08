@@ -73,6 +73,46 @@ def quick_sort_A(data, low, high):
 
         return data
 
+def quick_sort_B(data):
+    stack = []
+    left = []
+    right = []
+    # put the original data on the stack at index 0
+    stack.insert(0, data)
+    data = []
+    # while there are still sublists on the stack to be sorted
+    while len(stack) > 0:
+        # pop the next sublist off the stack to sort
+        current = stack.pop(0)
+        # if it is a single element, no further sorting, add to final data list
+        if isinstance(current, object):
+            data.insert(0, current)
+        elif current != None:
+            # use first element as pivot
+            pivot = current.pop(0)
+            # while there are still elements in the sublist
+            while len(current) > 0:
+                # if next element smaller than pivot, add to left list
+                if current[0] < pivot:
+                    # move left
+                    left.append(current.pop(0))
+                # otherwise if next element larger than pivot, add to the right
+                elif current[0] > pivot:
+                    # move to right
+                    right.append(current.pop(0))
+            
+            # quick sort LHS, RHS
+            if len(right) > 0:
+                stack.insert(0, right)
+            stack.insert(0, pivot)
+            if len(left) > 0:
+                stack.insert(0, left)
+            print("*" + str(len(current)))
+            
+    return data
+
+                
+
 # l = [20, 30, 10, 5, 70, 100, 8, 1, 12, 4, 6, 2]
 
 # sl = quick_sort(l)

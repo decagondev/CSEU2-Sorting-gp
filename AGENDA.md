@@ -23,6 +23,7 @@
 - Implement in place quick sort [WE DO]
 - 5 min break
 - Implement Quick sort with internal stack [WE DO]
+- Challenge what 2 sorting algorithms are used in timsort? [YOU DO]
 - quick talk about timsort [I DO]
 - talk about the project (Wrap up) [I DO]
-- (aditional video will be made with another version of quick sort
+- (additional video will be made with another version of quick sort)

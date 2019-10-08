@@ -43,6 +43,35 @@ def quick_sort(data):
 
     return quick_sort(left) + [pivot] + quick_sort(right)
 
+def quick_sort_A(data, low, high):
+    if low >= high:
+        return data
+    else:
+        # divide
+        pivot_index = low
+
+        # for each element in sublist
+        for i in range(low, high):
+            if data[i] < data[pivot_index]:
+                # double swap to move smaller elements to correct index
+                # move current element to the right of the pivot
+                temp = data[pivot_index + 1]
+                data[pivot_index + 1] = data[i]
+                data[i] = temp
+                # swap pivot with element to its right
+                temp = data[pivot_index]
+                data[pivot_index] = data[pivot_index + 1]
+                data[pivot_index + 1] = data[i]
+                data[i] = temp
+
+        # conqure
+        # quick sort left
+        data = quick_sort_A(data, low, pivot_index)
+
+        # quick sort right
+        data = quick_sort_A(data, pivot_index + 1, high)
+
+        return data
 
 # l = [20, 30, 10, 5, 70, 100, 8, 1, 12, 4, 6, 2]
 
@@ -65,7 +94,7 @@ for input_size in input_sizes:
     # Store start time
     start_time = time()
     # Run some code
-    quick_sort(l)
+    # quick_sort_A(l, 0, input_size)
     # Store end time
     end_time = time()
     # print out end time - start time
